@@ -4,7 +4,7 @@ import cumbre.*
 class Participante {
 	var property pais
 	const conocimientos = []
-	var commits
+	var commits = 0
 	
 	method agregarConocimiento(conocimiento) {conocimientos.add(conocimiento)}
 	method esCape()
