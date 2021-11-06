@@ -1,4 +1,6 @@
 import cumbre.*
+import conocimientos.*
+
 class Pais {
 	const conflictivos = []
 	
@@ -13,4 +15,9 @@ class Pais {
 
 
 class Actividad {
+	var property tema = programacionBasica
+	var property horas = 0
+	
+	method commitsOtorgados() =  horas * tema.commitsPorHora()
+	
 }

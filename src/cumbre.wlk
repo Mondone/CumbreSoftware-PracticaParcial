@@ -1,3 +1,5 @@
+import paisesEmpresasActividades.* 
+
 object cumbre {
 	const property participantes = #{}
 	var property commitsMinimosProgramador = 300
@@ -5,6 +7,12 @@ object cumbre {
 	const auspiciantes = []
 	const registrados = []
 
+	method agregarActividad(actividad) {
+		actividadesRealizadas.add(actividad)
+		participantes.forEach{ p => p.realizarActividad(actividad) }
+	}
+	
+	method totalHorasActividades() = actividadesRealizadas.sum{ a => a.horas() }
 	
 	method registrar(persona) {
 		registrados.add(persona)
