@@ -31,7 +31,7 @@ object cumbre {
 	
 	method paisConMasParticipantes() = self.paises().max{pais=> self.cantidadDeParticipantesDe(pais)}
 	
-	method paises() = participantes.map{p=>p.pais()}.asSet()
+	method paises() = participantes.map{p=>p.pais()}.asSet() // asSet => Conjunto
 	
 	method relevante() = participantes.all{p=>p.esCape()}
 	

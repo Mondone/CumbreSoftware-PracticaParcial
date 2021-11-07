@@ -6,7 +6,7 @@ import paisesEmpresasActividades.*
 class Participante {
 	var property pais
 	const conocimientos = #{}
-	var commits = 
+	var commits  
 	
 	method agregarConocimiento(conocimiento) {conocimientos.add(conocimiento)}
 	method esCape()
@@ -21,13 +21,13 @@ class Participante {
 	method puedeEntrar2() = self.condicionBasica() && self.condicionAdicional()
 	
 	method realizarActividad(actividad) {
-		agregarConocimiento(actividad.tema())
+		self.agregarConocimiento(actividad.tema())
 		commits += actividad.commitsOtorgados()
 	}
 }
 
 class Programador inherits Participante{
-	const horasCapacitacion = 0
+	var property horasCapacitacion = 0
 	
 	override method esCape() = commits > 500
 	override method puedeEntrar() = super() && commits >= cumbre.commitsMinimosProgramador()
@@ -48,6 +48,7 @@ class Gerente inherits Participante {
 	const property empresa
 	
 	override method esCape() = empresa.esMultinacional()
+	override method puedeEntrar() = super() and conocimientos.contains(manejoDeGrupos)
 	
 }
 
