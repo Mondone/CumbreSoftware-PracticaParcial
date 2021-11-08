@@ -46,7 +46,7 @@ class Especialista inherits Participante{
 
 class Gerente inherits Participante {
 	const property empresa
-	
+
 	override method esCape() = empresa.esMultinacional()
 	override method puedeEntrar() = super() and conocimientos.contains(manejoDeGrupos)
 	
